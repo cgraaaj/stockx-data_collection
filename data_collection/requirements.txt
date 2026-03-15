@@ -1,0 +1,10 @@
+# Data collection only (Upstox → TimescaleDB)
+# Install: pip install -r data_collection/requirements.txt
+aiohttp>=3.9
+pandas>=2.0
+requests>=2.28
+SQLAlchemy>=2.0
+tenacity>=9.0
+tqdm>=4.65
+python-dotenv>=1.0
+pyyaml>=6.0

@@ -1,0 +1,35 @@
+# Virtual environments
+venv/
+.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment / secrets
+.env
+*.env.local
+
+# Logs (can grow to GBs)
+logs/
+*.log
+
+# Large data files
+python/NSE.json
+python/*.json.gz
+
+# Working copies / scratch
+new_changes/
+memory/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Misc
+bottomline.txt
