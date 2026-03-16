@@ -1,11 +1,10 @@
-# CGR Trades – Data Collection
+# StockX Trades – Data Collection
 
 Fetches NSE option/stock data via Upstox API and writes to TimescaleDB. Designed for daily automated collection via cron.
 
 ## Setup
 
 ```bash
-cd cgr-trades
 python -m venv venv
 source venv/bin/activate
 pip install -r data_collection/requirements.txt
@@ -34,7 +33,8 @@ python data_collection/opt-stk-data-to-db-upstox-nosync.py 2026-03-15 --force
 
 ```bash
 # 7:30 AM on weekdays
-30 7 * * 1-5  cd /home/cgraaaj/cgr-trades && ./data_collection/daily_data_collector.sh
+# 30 7 * * 1-5  cd /home/cgraaaj/cgr-trades && ./data_collection/daily_data_collector.sh
+0 7 * * 2-6 (cd /home/cgraaaj/cgr-trades && source venv/bin/activate && python3 data_collection/opt-stk-data-to-db-upstox-nosync.py $(date -d "yesterday" +\%Y-\%m-\%d)) >> /home/cgraaaj/cgr-trades/logs/cron_$(date +\%Y\%m\%d).log 2>&1
 ```
 
 ## Project structure
